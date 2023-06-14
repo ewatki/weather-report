@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+body {
+    background: rgb(12,121,189);
+    background: linear-gradient(180deg, rgba(12,121,189,1) 37%, rgba(12,121,189,0.46680679107580536) 100%); 
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+    width: 75vw;
+    height: 85vh;
+    margin: 5rem auto;
+    border-radius: 15px;
+}
+
+h1 {
+    border-bottom: 2px solid black;
+}
+
+.row.weather-for-city, 
+.row.choose-city-sky, 
+.row.weather-garden {
+    background-color: rgba(248, 248, 255, 0.305);
+}
+
+h2,
+.row.weather-for-city section,
+.row.choose-city-sky section {
+    display: inline-block;
+}
+
+.row.weather-for-city {
+    flex-grow: 1;
+}
+
+.row.choose-city-sky {
+    flex-grow: 0.25;
+}
+
+.row.weather-garden {
+    flex-grow: 2;
+}
+
+.row.weather-for-city, 
+.row.choose-city-sky {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1, 
+#city > h2, 
+h4, 
+.fa-solid {
+    font-family: 'Kanit', sans-serif;
+}
+
+#city > h2 {
+    text-align: right;
+} 
+
+h2 {
+    font-size: 4em;
+}
+
+#city > h2, 
+h4 {
+    font-size: 2em;
+}
+
+#temperature {
+    text-align: center;
+}
+
+#temperature div {
+    height: 90px;
+}
+
+#temperature div h2 {
+    position: relative;
+    top: 12px;
+    right: 5px;
+}
+
+#realtime-temp {
+    width: 325px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #005922;
+    background-color: #005922;
+}
+
+#realtime-temp:hover {
+    cursor:pointer;
+}
+
+.choose-city > #textbox {
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #005922;
+    background-color: transparent;
+}
+
+.choose-city > #textbox::placeholder {
+    text-align: right;
+}
+
+.choose-sky {
+    width: 360px;
+}
+
+.choose-sky select {
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #005922;
+    color: white;
+    background-color: #005922;
+}
+
+select > option:hover {
+    background-color: #005922;
+}
+
+
+.row.weather-garden #landscape, 
+.row.weather-garden #sky {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 20px;
+    font-size: 3rem;
+}
+
+.row.weather-garden #sky {
+    height: 50%;
+}
+
+.red {
+color: red;
+}
+
+.orange {
+color: orange;
+}
+
+.yellow {
+color: gold;
+}
+
+.yellow-green {
+color: yellowgreen;
+}
+
+.green {
+color: green;
+}
+
+.teal {
+color: teal;
+}
+
+.cloudy {
+background-color: lightgrey;
+}
+
+.sunny {
+background-color: rgb(221, 255, 255);
+}
+
+.rainy {
+background-color: lightblue;
+}
+
+.snowy {
+background-color: #b0c4de;
+}

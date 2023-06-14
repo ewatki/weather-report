@@ -4,13 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Report</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b581a87b17.js" crossorigin="anonymous"></script>
+    <title>Weather Report</title>
+
 </head>
+
 <body>
-    <script src="./src/index.js"></script>
+    <main class="container"> 
+        <header class="row">
+            <h1>Weather Report</h1>
+        </header>
+        <section class="row weather-for-city">
+            <section id="temperature">
+              <div>
+                <i class="fa-sharp fa-solid fa-chevron-left"></i>
+                <h2 id="degrees-display">
+                  <span id="degrees">70</span>
+                  &#x2109;
+                </h2>
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+              </div>
+              <button id="realtime-temp">See RealTime Temperature</button>
+            </section>
+            <section>
+              <h2 id="city">Atlanta</h2>
+            </section>
+        </section>
+
+    <!-- <input type="text" id="city-input" oninput="updateCityName()"> -->
+        <section class="row choose-city-sky">
+          <section class="choose-city">
+            <h4>City Name: </h4>
+            <input id="textbox" type="text" placeholder= "Enter"></input>
+            
+          </section>
+          <section class="choose-sky">
+            <h4>Sky:</h4>
+            <select class="select-sky" name="select-sky">
+                <option value="sunny">Sunny</option>
+                <option value="cloudy">Cloudy</option>
+                <option value="rainy">Rainy</option>
+                <option value="snowy">Snowy</option>
+            </select>
+          </section>
+        </section>
+        <section class="row weather-garden">
+          <section id="sky">
+            <p>☁️ ☁️ ☁️ ☁️ ☀️ ☁️ ☁️ ☁️ ☁️</p>
+          </section>
+          <section id="landscape">
+            <p>🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷</p>
+          </section>
+        </section>
+    </main>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./src/index.js"></script>
 </body>
 </html>
+
+
+

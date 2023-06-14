@@ -93,7 +93,6 @@ const changeSky = (event) => {
     } else {
         sky.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨'
         sky_backdrop.style.backgroundColor = 'whitesmoke'
-
     }
 }
 

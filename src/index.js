@@ -17,7 +17,6 @@ cityTextBox.oninput = (event) => {
 
 // Handle See RealTime Temperature
 const findCityLocation = () => {
-    console.log('working')
     axios.get('http://localhost:5000/location', {
         params: {
             q: city.textContent
@@ -32,6 +31,7 @@ const findCityLocation = () => {
         }).then(response => {
             state.tempDisplay.textContent = Math.floor((response.data.main.temp - 273.15) * 9/5 + 32)
             state.temp = state.tempDisplay.textContent
+            changeColor();
         })
     })
     .catch((error) => {
@@ -42,13 +42,11 @@ const findCityLocation = () => {
 // Handle Temp Arrows
 let decreaseDegree = () => {
     --state.temp;
-    console.log(state.temp)
     changeColor();
     refreshUI();
 }
 let increaseDegree = () => {
     ++state.temp;
-    console.log(state.temp)
     changeColor();
     refreshUI();
 }
@@ -78,22 +76,28 @@ const changeLandscape = (garden) => {
 }
 
 const changeSky = (event) => {
-    console.log(event.target.value);
     const sky = document.getElementById('sky')
-    const sky_backdrop = document.querySelector('.weather-garden')
+    const backgroundSky = document.querySelector(':root').style
+
     if (event.target.value == 'sunny') {
         sky.textContent = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️'
-        sky_backdrop.style.backgroundColor = 'lightyellow'
+        backgroundSky.setProperty('--background-sky', 'linear-gradient(-45deg, #fdbb2d, #eeca7d, #f1f5f7, #81bfe6)');
     } else if (event.target.value == 'cloudy') {
         sky.textContent = '☁️☁️ ☁️ ☁️ ☁️ 🌤 ☁️ ☁️☁️'
-        sky_backdrop.style.backgroundColor = 'lightgray'        
+        backgroundSky.setProperty('--background-sky', 'linear-gradient(-45deg, #e8dcc3, #91908e, #81bfe6)');     
     } else if ( event.target.value == 'rainy') {
         sky.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧'
-        sky_backdrop.style.backgroundColor = 'navy'
+        backgroundSky.setProperty('--background-sky', 'linear-gradient(-45deg, #ddc083, #6c777c, #4bcce9)');   
     } else {
         sky.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨'
-        sky_backdrop.style.backgroundColor = 'whitesmoke'
+        backgroundSky.setProperty('--background-sky', 'linear-gradient(-45deg, #f5ead2, #dfeef1, #f4f8fa)');   
     }
+}
+
+const resetCity = () => {
+    cityTextBox.value = '';
+    city.innerText = 'Atlanta'
+    findCityLocation('Atlanta')
 }
 
 const loadControls = () => {
@@ -105,6 +109,7 @@ const registerEvents = () => {
     document.querySelector('.fa-chevron-right').addEventListener('click', increaseDegree);
     document.getElementById('realtime-temp').addEventListener('click', findCityLocation);
     document.querySelector('.select-sky').addEventListener('change', changeSky);
+    document.getElementById('reset-city').addEventListener('click', resetCity);
 }
 
 const onLoaded = () => {

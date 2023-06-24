@@ -1,3 +1,8 @@
+:root {
+    --green: #005922;
+    --background-sky: linear-gradient(-45deg, #fdbb2d, #eeca7d, #f1f5f7, #81bfe6);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,9 +10,25 @@
 }
 
 body {
-    background: rgb(12,121,189);
-    background: linear-gradient(180deg, rgba(12,121,189,1) 37%, rgba(12,121,189,0.46680679107580536) 100%); 
+    /* Change depending on sky */
+    /* background: linear-gradient(180deg, rgba(12,121,189,1) 37%, rgba(12,121,189,0.46680679107580536) 100%);  */
+    background: var(--background-sky);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+
     min-height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -62,6 +83,12 @@ h4,
     font-family: 'Kanit', sans-serif;
 }
 
+.fa-solid:hover,
+#reset-city,
+.choose-sky select {
+    cursor: pointer;
+}
+
 #city > h2 {
     text-align: right;
 } 
@@ -95,8 +122,8 @@ h4 {
     border-radius: 5px;
     font-size: 16px;
     color: white;
-    border: 1px solid #005922;
-    background-color: #005922;
+    border: 1px solid var(--green);
+    background-color: var(--green);
 }
 
 #realtime-temp:hover {
@@ -107,12 +134,19 @@ h4 {
     width: 300px;
     height: 25px;
     border-radius: 5px;
-    border: 1px solid #005922;
+    border: 1px solid var(--green);
     background-color: transparent;
 }
 
 .choose-city > #textbox::placeholder {
     text-align: right;
+}
+
+#reset-city {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--green);
 }
 
 .choose-sky {
@@ -123,13 +157,13 @@ h4 {
     width: 150px;
     height: 35px;
     border-radius: 5px;
-    border: 1px solid #005922;
+    border: 1px solid var(--green);
     color: white;
-    background-color: #005922;
+    background-color: var(--green);
 }
 
 select > option:hover {
-    background-color: #005922;
+    background-color: var(--green);
 }
 
 

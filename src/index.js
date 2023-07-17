@@ -51,23 +51,29 @@ let increaseDegree = () => {
     refreshUI();
 }
 
+degreeSymbol = document.querySelector('.deg-symbol')
+
 const changeColor = () => {
     if (state.tempDisplay.textContent >= 80) 
     {   
         state.tempDisplay.style.color = 'red';
+        degreeSymbol.style.color = 'red';
         changeLandscape("🌵__🐍_🦂_🌵🌵__🐍_🏜_🦂")
     } else if (state.tempDisplay.textContent >= 70) {
         state.tempDisplay.style.color = 'orange';
+        degreeSymbol.style.color = 'orange';
         changeLandscape("🌸🌿🌼__🌷🌻🌿_☘️🌱_🌻🌷")
-    } else if (state.tempDisplay.textContent >= 60) 
-    {
+    } else if (state.tempDisplay.textContent >= 60) {
         state.tempDisplay.style.color = 'gold';
+        degreeSymbol.style.color = 'gold';
         changeLandscape("🌾🌾_🍃_🪨__🛤_🌾🌾🌾_🍃")
     } else if (state.tempDisplay.textContent >= 50) {
         state.tempDisplay.style.color = 'green';
+        degreeSymbol.style.color = 'green';
         changeLandscape("🌲🌲⛄️🌲⛄️🍂🌲🍁🌲🌲⛄️🍂🌲")
     } else {
         state.tempDisplay.style.color = 'teal';
+        degreeSymbol.style.color = 'teal';
     }
 }
 
@@ -117,6 +123,7 @@ const onLoaded = () => {
     loadControls();
     registerEvents();
     refreshUI();
+    resetCity();
 };
 
 onLoaded();

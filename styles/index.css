@@ -1,6 +1,6 @@
 :root {
     --green: #005922;
-    --background-sky: linear-gradient(-45deg, #fdbb2d, #eeca7d, #f1f5f7, #81bfe6);
+    --background-sky: linear-gradient(-45deg, #fdbb2d, #eeca7d, #f1f5f7,#81bfe6);
 }
 
 * {
@@ -10,12 +10,9 @@
 }
 
 body {
-    /* Change depending on sky */
-    /* background: linear-gradient(180deg, rgba(12,121,189,1) 37%, rgba(12,121,189,0.46680679107580536) 100%);  */
     background: var(--background-sky);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-
     min-height: 100vh;
 }
 
@@ -79,7 +76,12 @@ h2,
 h1, 
 #city > h2, 
 h4, 
-.fa-solid {
+.fa-solid, 
+.weather-for-city p, 
+.choose-sky select,
+.choose-city > #textbox, 
+#realtime-temp,
+#reset-city {
     font-family: 'Kanit', sans-serif;
 }
 
@@ -117,12 +119,15 @@ h4 {
 }
 
 #realtime-temp {
-    width: 325px;
-    height: 40px;
+    width: 235px;
+    height: 30px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+    right: 10px;
     color: white;
-    border: 1px solid var(--green);
+    border: none;
     background-color: var(--green);
 }
 
@@ -138,15 +143,11 @@ h4 {
     background-color: transparent;
 }
 
-.choose-city > #textbox::placeholder {
-    text-align: right;
-}
-
 #reset-city {
     border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: var(--green);
+    border-bottom: 1px solid black;
+    color: black;
+    background-color: transparent;
 }
 
 .choose-sky {

@@ -24,11 +24,10 @@
                 <i class="fa-sharp fa-solid fa-chevron-left"></i>
                 <h2 id="degrees-display">
                   <span id="degrees">70</span>
-                  &#x2109;
+                  <span class="deg-symbol">&#x2109;</span>
                 </h2>
                 <i class="fa-sharp fa-solid fa-chevron-right"></i>
               </div>
-              <button id="realtime-temp">See RealTime Temperature</button>
             </section>
             <section>
               <p>For the city of:</p>
@@ -38,10 +37,12 @@
 
         <section class="row choose-city-sky">
           <section class="choose-city">
-            <h4>City Name: </h4>
-            <input id="textbox" type="text" placeholder= "Enter"></input>
-            <button id="reset-city">Reset</button>
-            
+            <h4>Enter a City: </h4>
+            <input id="textbox" type="text"></input>
+            <div class="-city-buttons">
+              <button id="realtime-temp">See RealTime Temperature</button>
+              <button id="reset-city">Reset</button>
+            </div>
           </section>
           <section class="choose-sky">
             <h4>Sky:</h4>
